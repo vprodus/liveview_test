@@ -1,0 +1,15 @@
+{
+	"dockerComposeFile": ["docker-compose.yml"],
+  	"name": "pragmaticstudio-devcontainer",
+	"workspaceFolder": "/workspace/pragmaticstudio",
+	"service": "app_dev",
+	"extensions": [
+	  "jakebecker.elixir-ls",
+	  "eamodio.gitlens",
+	  "streetsidesoftware.code-spell-checker",
+	  "ckolkman.vscode-postgres",
+	  "florinpatrascu.vscode-elixir-snippets",
+	  "phoenixframework.phoenix"
+	],
+	"forwardPorts": [4000]
+}
