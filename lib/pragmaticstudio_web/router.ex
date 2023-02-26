@@ -21,6 +21,7 @@ defmodule PragmaticstudioWeb.Router do
     live "/light", LightLive
     live "/form", FormLive
     live "/dashboard", DashboardLive
+    live "/search", SearchLive
   end
 
   # Other scopes may use custom stacks.

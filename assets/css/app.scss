@@ -108,3 +108,138 @@ h3 {
     @apply text-center p-6 border-4 border-dotted border-green-600 text-xl font-semibold text-green-600;
   }
 }
+
+#flights {
+  @apply mt-8 max-w-3xl mx-auto text-center;
+
+  & form {
+    @apply inline-flex items-center px-2;
+
+    & input[type="text"] {
+      @apply h-10 border border-slate-400 rounded-l-md bg-white px-5 text-base;
+    }
+
+    & input[type="text"]:focus {
+      @apply outline-none;
+    }
+  }
+
+  & button {
+    @apply h-10 px-3 py-2 bg-transparent border border-slate-400 border-l-0 rounded-r-md transition ease-in-out duration-150 outline-none hover:bg-slate-300;
+
+    & img,
+    & svg {
+      @apply h-5 w-5;
+    }
+  }
+
+  & .flights {
+    @apply my-8 bg-white shadow overflow-hidden rounded-md;
+
+    & li {
+      @apply border-t border-slate-300 px-6 py-4 hover:bg-indigo-100;
+
+      & .first-line {
+        @apply flex items-center justify-between;
+
+        & .number {
+          @apply text-lg font-semibold text-indigo-600 truncate;
+        }
+
+        & .origin-destination {
+          @apply mt-0 flex items-center text-base text-indigo-600;
+
+          & img,
+          & svg {
+            @apply flex-shrink-0 mr-1 h-5 w-5;
+          }
+        }
+      }
+
+      & .second-line {
+        @apply mt-2 flex justify-between;
+
+        & .departs {
+          @apply text-slate-500;
+        }
+
+        & .arrives {
+          @apply text-slate-500;
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Loading Spinner
+ *
+ * Copied from:
+ * https://projects.lukehaas.me/css-loaders/
+ */
+
+ .loader,
+ .loader:before,
+ .loader:after {
+   border-radius: 50%;
+   width: 2.5em;
+   height: 2.5em;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+   -webkit-animation: load7 1.8s infinite ease-in-out;
+   animation: load7 1.8s infinite ease-in-out;
+ }
+ 
+ .loader {
+   color: #5a67d8;
+   font-size: 10px;
+   margin: 20px auto;
+   position: relative;
+   text-indent: -9999em;
+   -webkit-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   transform: translateZ(0);
+   -webkit-animation-delay: -0.16s;
+   animation-delay: -0.16s;
+ }
+ 
+ .loader:before,
+ .loader:after {
+   content: "";
+   position: absolute;
+   top: 0;
+ }
+ 
+ .loader:before {
+   left: -3.5em;
+   -webkit-animation-delay: -0.32s;
+   animation-delay: -0.32s;
+ }
+ 
+ .loader:after {
+   left: 3.5em;
+ }
+ 
+ @-webkit-keyframes load7 {
+   0%,
+   80%,
+   100% {
+     box-shadow: 0 2.5em 0 -1.3em;
+   }
+ 
+   40% {
+     box-shadow: 0 2.5em 0 0;
+   }
+ }
+ 
+ @keyframes load7 {
+   0%,
+   80%,
+   100% {
+     box-shadow: 0 2.5em 0 -1.3em;
+   }
+ 
+   40% {
+     box-shadow: 0 2.5em 0 0;
+   }
+ }
