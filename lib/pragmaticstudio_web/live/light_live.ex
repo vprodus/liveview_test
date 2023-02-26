@@ -27,6 +27,9 @@ defmodule PragmaticstudioWeb.LightLive do
       <button phx-click="on">
         <img src="/images/light-on.svg" />
       </button>
+      <button phx-click="random">
+        <img src="/images/fire.svg" />
+      </button>
     </div>
     """
   end
@@ -57,9 +60,7 @@ defmodule PragmaticstudioWeb.LightLive do
   end
 
   def handle_event("random", _, socket) do
-    # brightness = socket.assigns.brightness - 10
-    # socket = assign(socket, brightness: brightness)
-    socket = update(socket, :brightness, &max(&1 - 10, 0))
+    socket = assign(socket, :brightness, Enum.random(0..100))
     {:noreply, socket}
   end
 end
