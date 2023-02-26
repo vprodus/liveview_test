@@ -10,14 +10,23 @@ defmodule PragmaticstudioWeb.Router do
     plug :put_secure_browser_headers
   end
 
+
+  pipeline :nav do
+    plug :put_root_layout, {PragmaticstudioWeb.Layouts, :nav}
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/nav", PragmaticstudioWeb do
+    pipe_through [:browser, :nav]
+    live "/", HomeLive
   end
 
   scope "/", PragmaticstudioWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
     live "/light", LightLive
     live "/form", FormLive
     live "/dashboard", DashboardLive
