@@ -51,6 +51,7 @@ defmodule Pragmaticstudio.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
+      {:number, "~> 1.0"},
       {:dart_sass, "~> 0.5.1", runtime: Mix.env() == :dev}
     ]
   end

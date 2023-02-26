@@ -19,6 +19,7 @@ defmodule PragmaticstudioWeb.Router do
 
     get "/", PageController, :home
     live "/light", LightLive
+    live "/form", FormLive
   end
 
   # Other scopes may use custom stacks.
