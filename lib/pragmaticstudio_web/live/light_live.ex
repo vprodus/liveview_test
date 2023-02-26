@@ -30,8 +30,18 @@ defmodule PragmaticstudioWeb.LightLive do
       <button phx-click="random">
         <img src="/images/fire.svg" />
       </button>
+      <form phx-change="brightness">
+        <input type="range" min="0" max="100"
+                name="brightness" value={@brightness} />
+      </form>
     </div>
+
     """
+  end
+
+  def handle_event("brightness", %{"brightness" => number}, socket) do
+    socket = assign(socket, brightness: String.to_integer(number))
+    {:noreply, socket}
   end
 
 
